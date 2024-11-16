@@ -1,0 +1,57 @@
+---
+const response = await fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=48&regionCode=KR&key=' + import.meta.env.GG_TOKEN);
+const data = await response.json();
+const YTMostPopular = data.items;
+type YTVideo = {
+	id: string,
+	snippet: {
+		title: string;
+		description: string;
+		thumbnails: {
+			standard: {
+				url: string | null | undefined;
+			};
+		};
+		publishedAt: string;
+		channelTitle: string;
+		channelId: string;
+	};
+};
+---
+
+<div class="grid gap-3">
+	{YTMostPopular?.map((item: YTVideo) => 
+		<div class="g-col-12 g-col-sm-6 g-col-md-4 g-col-lg-3">
+			<div class="card h-100">
+				<img src=`${item.snippet.thumbnails.standard.url}` alt="" class="card-img-top w-100" />
+				<div class="card-body">
+					<h3 class="card-title h6"><a href=`https://www.youtube.com/watch?v=${item.id}` target="_blank">{item.snippet.title}</a></h3>
+					<p class="card-desc lh-sm text-muted mb-2"><small>{item.snippet.description}</small></p>
+					<div class="card-text">
+						<div>{item.snippet.publishedAt}</div>
+						<div><a href=`https://www.youtube.com/channel/${item.snippet.channelId}` target="_blank">{item.snippet.channelTitle}</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	)}
+</div>
+
+<style>
+	.card-title {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 5;
+	}
+	.card-desc {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 5;
+	}
+</style>
