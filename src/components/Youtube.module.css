@@ -40,6 +40,19 @@
 .card:hover {
   box-shadow: 0 0 30px rgba(0,0,0,0.75);
 }
+.cardimg {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+.cardimg img {
+  display: block;
+  visibility: hidden;
+}
 .title {
   display: block;
   overflow: hidden;
