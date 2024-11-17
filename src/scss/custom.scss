@@ -1,5 +1,9 @@
 // Custom.scss
 // Option B: Include parts of Bootstrap
+@import "https://fonts.googleapis.com/icon?family=Material+Icons&display=block";
+@import "https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&display=swap";
+@import "https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap";
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
