@@ -18,10 +18,10 @@ const Youtube = (props) => {
     }, []);
 
     return (
-      <div className="grid gap-3">
+      <div className={"grid gap-3 " + styles.grid}>
         {data.map((item) => (
-          <div className="g-col-12 g-col-sm-6 g-col-md-4 g-col-lg-3" key={item.id}>
-            <div className="card h-100">
+          <div className={"g-col-12 g-col-sm-6 g-col-md-4 g-col-lg-3 " + styles.gcol} key={item.id}>
+            <div className={"card h-100 " + styles.card}>
               <img src={item.snippet.thumbnails.standard.url} alt="" className="card-img-top w-100" />
               <div className="card-body">
                 <h3 className={"card-title h6 " + styles.title}>
