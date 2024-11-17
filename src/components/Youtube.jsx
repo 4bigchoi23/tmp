@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './Youtube.module.css';
 
-// moment.locale('kr');
-
 const Youtube = (props) => {
     const [data, setData] = useState([]);
 
