@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Youtube from '../components/Youtube.jsx';
+import Youtube from '../components/Youtube';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -41,7 +41,7 @@ import Youtube from '../components/Youtube.jsx';
 			<a href="https://astro.build/" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/astro-4.16.13-BC52EE"></a>
 			<a href="https://pages.cloudflare.com/" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/deployment-Cloudflare_Pages-F38020"></a>
 		</p>
-		<Youtube client:load token={import.meta.env.GG_TOKEN} />
+		<Youtube client:load />
 	</main>
 </Layout>
 

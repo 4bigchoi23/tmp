@@ -1,23 +1,27 @@
-.grid {
+.youtube {
+  position: relative;
+}
+
+.youtube .grid {
   counter-reset: number;
 }
-.gcol .card::before {
+.youtube .grid > * .card::before {
   --rank-bg: var(--bs-secondary);
   --rank-color: #fff;
 }
-.gcol:nth-child(-n+3) .card::before {
+.youtube .grid > *:nth-child(-n+3) .card::before {
   --rank-bg: var(--bs-primary);
   --rank-color: #fff;
 }
-.gcol:nth-child(n+4):nth-child(-n+10) .card::before {
+.youtube .grid > *:nth-child(n+4):nth-child(-n+10) .card::before {
   --rank-bg: var(--bs-success);
   --rank-color: #fff;
 }
-.card {
+.youtube .card {
   position: relative;
   transition: box-shadow 0.25s ease-in-out;
 }
-.card::before {
+.youtube .card::before {
   counter-increment: number;
   content: counter(number);
   position: absolute;
@@ -37,10 +41,10 @@
   font-size: calc(1rem * 0.875);
   box-shadow: 1px 1px 3px rgba(0,0,0,0.25)
 }
-.card:hover {
+.youtube .card:hover {
   box-shadow: 0 0 30px rgba(0,0,0,0.75);
 }
-.cardimg {
+.youtube .card-img-top {
   display: block;
   overflow: hidden;
   aspect-ratio: 16/9;
@@ -49,11 +53,11 @@
   background-position: center center;
   width: 100%;
 }
-.cardimg img {
+.youtube .card-img-top img {
   display: block;
   visibility: hidden;
 }
-.title {
+.youtube .card-title {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -62,7 +66,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
 }
-.desc {
+.youtube .card-desc {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
