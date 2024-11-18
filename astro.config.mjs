@@ -11,4 +11,9 @@ export default defineConfig({
     imageService: 'cloudflare',
   }),
   integrations: [react()],
+  vite: {
+    define: {
+        "process.env": process.env
+    }
+  },
 });
