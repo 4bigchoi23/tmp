@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Youtube from '../components/Youtube';
+
+const now = new Date().toISOString();
 ---
 
 <Layout title="Welcome to Astro.">
@@ -34,12 +36,15 @@ import Youtube from '../components/Youtube';
 			</defs>
 		</svg>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="text-center mb-4">
+		<p class="text-center mb-2">
 			<a href=""><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftmp.ran.kro.kr&count_bg=%23dc3545&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
 			<a href="https://github.com/4bigchoi23/tmp/tree/astro" target="_blank"><img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/m/4bigchoi23/tmp/astro"></a>
 			<a href="https://github.com/4bigchoi23/tmp/commits/astro/" target="_blank"><img alt="GitHub Last Commit (branch)" src="https://img.shields.io/github/last-commit/4bigchoi23/tmp/astro"></a>
 			<a href="https://astro.build/" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/astro-4.16.13-BC52EE"></a>
 			<a href="https://pages.cloudflare.com/" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/deployment-Cloudflare_Pages-F38020"></a>
+		</p>
+		<p class="text-center mb-4">
+			{now}
 		</p>
 		<Youtube client:load />
 	</main>
